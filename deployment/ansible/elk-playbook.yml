@@ -1,0 +1,22 @@
+- name: ELK Stack Single Node
+  hosts: localhost
+  become: true
+  roles:
+    - role: elastic.elasticsearch
+    - role: logstash
+    - role: kibana
+    - role: nginxinc.nginx
+    - role: nginx-elk-config
+  vars:
+      es_instance_name: "{{ es_instance_name }}"
+      es_data_dirs:
+        - "/data/elasticsearch/data"
+      es_log_dir: "/data/elasticsearch/logs"
+      es_config: 
+        node.name: "{{ es_cluster_node_name }}"
+        cluster.name: "{{ es_cluster_name }}"
+        node_master: true
+      es_enable_xpack: true
+      es_major_version: 6.x
+      type: openssource
+      

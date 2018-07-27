@@ -1,0 +1,6 @@
+---
+logstash_enabled_on_boot: false
+
+logstash_install_plugins:
+  - logstash-filter-geoip
+  - logstash-input-s3

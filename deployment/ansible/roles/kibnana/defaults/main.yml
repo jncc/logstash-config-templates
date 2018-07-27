@@ -1,0 +1,11 @@
+---
+kb_major_version: "6.x"
+
+kb_use_repository: true
+kb_apt_key_url: "https://artifacts.elastic.co/GPG-KEY-elasticsearch"
+kb_apt_url: "deb https://artifacts.elastic.co/packages/{{ kb_major_version }}/apt stable main"
+
+kb_server_port: 5601
+kb_server_host: "0.0.0.0"
+
+kb_elasticsearch_url: "http://localhost:9200"

@@ -1,0 +1,17 @@
+---
+- name: Get list of installed plugins.
+  command: >
+    /usr/share/logstash/bin/logstash-plugin list
+  become: yes
+  register: logstash_plugins_list
+  changed_when: false
+
+- name: Install configured plugins.
+  command: >
+    /usr/share/logstash/bin/logstash-plugin install {{ item }}
+  with_items: "{{ logstash_install_plugins }}"
+  become: yes
+  when: "item not in logstash_plugins_list.stdout"
+  notify: restart logstash
+
+  
