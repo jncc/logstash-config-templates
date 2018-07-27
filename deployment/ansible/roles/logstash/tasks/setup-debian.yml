@@ -1,0 +1,13 @@
+---
+- name: Ensure dependency is installed (Ubuntu).
+  apt: name=apt-transport-https state=present
+
+- name: Debian - Add Elasticsearch repository key
+  become: yes
+  apt_key: url="{{ kb_apt_key_url }}" state=present
+  when: kb_use_repository and kb_apt_key_url
+
+- name: Debian - Add Elasticsearch repository
+  become: yes
+  apt_repository: repo={{ kb_apt_url }} state=present
+  when: kb_use_repository

@@ -14,9 +14,10 @@
       es_log_dir: "/data/elasticsearch/logs"
       es_config: 
         node.name: "{{ es_cluster_node_name }}"
+        node.master: true
         cluster.name: "{{ es_cluster_name }}"
-        node_master: true
       es_enable_xpack: true
-      es_major_version: 6.x
+      es_api_basic_auth_username: "{{ es_cluster_username }}"
+      es_api_basic_auth_password: "{{ es_cluster_password }}"
+      es_version: 6.3.2
       type: openssource
-      
