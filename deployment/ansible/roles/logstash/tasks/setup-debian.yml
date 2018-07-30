@@ -4,10 +4,10 @@
 
 - name: Debian - Add Elasticsearch repository key
   become: yes
-  apt_key: url="{{ kb_apt_key_url }}" state=present
-  when: kb_use_repository and kb_apt_key_url
+  apt_key: url="{{ ls_apt_key_url }}" state=present
+  when: ls_use_repository and ls_apt_key_url
 
 - name: Debian - Add Elasticsearch repository
   become: yes
-  apt_repository: repo={{ kb_apt_url }} state=present
-  when: kb_use_repository
+  apt_repository: repo={{ ls_apt_url }} state=present
+  when: ls_use_repository

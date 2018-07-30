@@ -1,4 +1,10 @@
 ---
+ls_major_version: "6.x"
+
+ls_use_repository: true
+ls_apt_key_url: "https://artifacts.elastic.co/GPG-KEY-elasticsearch"
+ls_apt_url: "deb https://artifacts.elastic.co/packages/{{ ls_major_version }}/apt stable main"
+
 logstash_enabled_on_boot: false
 
 logstash_install_plugins:

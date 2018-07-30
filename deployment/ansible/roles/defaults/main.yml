@@ -1,0 +1,3 @@
+---
+- es_plugin_list:
+  - plugin: repository-s3

@@ -12,3 +12,4 @@
     name: logstash
     state: started
   enabled: "{{ logstash_enabled_on_boot }}"
+  when: logstash_enabled_on_boot == true
